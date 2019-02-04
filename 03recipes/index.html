@@ -1,0 +1,42 @@
+
+<!DOCTYPE html> 
+<html> 
+	<head> 
+		<title>Shimanti's Webpages</title> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+		
+		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script>
+			$(document).bind('mobileinit',function(){
+				$.mobile.pushStateEnabled = false;
+			});
+		</script>
+		<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+		
+	</head> 
+	<body> 
+
+		<div data-role="page" data-theme="a">
+		
+			<div data-role="header">
+				<h1>Shimanti's Webpages</h1>
+			</div><!-- /header -->
+
+			<div data-role="content">
+            <h1>Recipe Page with Simple HTML</h1>
+
+            <ul data-role="listview">
+				<li><a href="http://watzthis.x10host.com/03recipes/pasta.html"> One-Pot-Pasta Recipe</a></li>   
+				<li><a href="http://watzthis.x10host.com/03recipes/pasta2.html"> Alternative Recipe</a></li>
+            </ul>
+			</div><!-- /content -->
+        
+			<div data-role="footer">
+				  <h3> Thanks for checking my stuff out</h3>
+				  <h3> &copy Shimanti Guha 2019</h3>
+			</div><!-- /footer -->
+		</div><!-- /page -->
+
+	</body>
+</html>

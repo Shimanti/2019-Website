@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+  <html>
+    
+      <head>
+        
+        <title>FLASH!</title>
+        <meta charset="utf-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">   
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+             
+        <script> 
+          var light = new Array(); 
+          var t; 
+          var color=0; 
+          var flipping=0; 
+          var speed;  
+          light[0] = "black"; 
+          light[1] = "white"; 
+          light[2] = "maroon"; 
+          light[3] = "midnightblue"; 
+          light[4] = "green"; 
+          light[5] = "yellow";  
+          function flip(whichway){   
+             document.body.style.backgroundColor = light[whichway];   
+             stopFlip(); 
+          }      
+          function autoFlip() { 
+             document.body.style.backgroundColor = light[color];
+             if (color < light.length-1) {         
+             color++;     
+           } else {         
+             color=0;     
+           }     
+          t = setTimeout("autoFlip()",speed); 
+          } 
+          function doAutoFlip(changespeed){     
+           if (!flipping){         
+             flipping=1;   
+             speed=changespeed;      
+             autoFlip();     
+           }    
+          } 
+          function stopFlip() {     
+           clearTimeout(t);     
+           flipping=0; 
+          }             
+        </script>
+        
+      </head>
+      
+      <style>
+        body {
+          font-family:arial, helvetica;
+          text-align: center;
+        }
+        #container {}
+        #directions, #flashlight, #danceparty, #stop {
+          margin:4px;
+        }
+         ol {
+          display: inline-block;
+          margin: 0 auto;
+          text-align:left;
+         }
+         .bigButton {
+            font-size:18px;
+        }
+        #myinfo {
+          left: 50%;
+          margin-top:50%;
+        }
+      </style>
+        
+      <body>
+        
+      <h1>FLASH!</h1>
+      <div id="directions">
+        <p>Welcome to the Flashing Lights application!</p>
+        <ol>
+          <li>TEST colors using the first set of buttons.</li>
+          <li>FLASH the lights with the second set of buttons.</li>
+          <li>STOP the flashing lights with the last button.</li>
+        </ol>
+        <p></p>
+      </div>
+      
+      <div id="container">
+        
+         <div id="flashlight">
+          <input type="button" id="BLACK" class="bigButton" value="BLACK" onclick="flip(0);"> 
+          <input type="button" id="WHITE" class="bigButton" value="WHITE" onclick="flip(1);"> 
+          <input type="button" id="RED" class="bigButton" value="RED" onclick="flip(2);">
+          <input type="button" id="BLUE" class="bigButton" value="BLUE" onclick="flip(3);">
+          <input type="button" id="GREEN" class="bigButton" value="GREEN" onclick="flip(4);">
+          <input type="button" id="YELLOW" class="bigButton" value="YELLOW" onclick="flip(5);">
+          <p></p>
+         </div>
+         
+         <div id="danceparty"> 
+          <input type="button" id="FAST" class="bigButton" value="FAST" onclick="doAutoFlip(200);">
+          <input type="button" id="MED" class="bigButton" value="MEDIUM" onclick="doAutoFlip(700);"> 
+          <input type="button" id="SLOW" class="bigButton" value="SLOW" onclick="doAutoFlip(1200);">
+          <p></p>
+         </div>
+         
+         <div id="stop"> 
+          <input type="button" id="STOP" class="bigButton" value="STOP THE FLASHING!!" onclick="stopFlip();">        
+         </div>
+         <!-- Comments -->
+         
+         <div id="myinfo"> 
+          <input type="button" id="INFO" class="bigButton" value="ABOUT ME" onclick="window.location.href='about.html';">    
+         </div>
+         
+       </div>
+      </body>
+        
+  </html>

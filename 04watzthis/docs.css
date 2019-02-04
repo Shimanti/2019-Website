@@ -1,0 +1,14 @@
+h1 {
+      text-align: center;
+}
+figcaption, footer {
+      text-align: center;
+      font-size: 12px;
+}
+img {
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+     width: 50%;
+}
+

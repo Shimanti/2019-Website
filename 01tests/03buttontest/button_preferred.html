@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+    
+<div class="w3-container">
+<h1>Using Javascript</h1>
+
+<h2>Full-width Buttons (w3-button) with bold style</h2>
+<p><button class="w3-button w3-block w3-blue w3-round-xlarge"
+style="width:100%; font-weight: bold" onclick="this.innerHTML = 'Hello!'">
+Click me first</button></p>
+
+<h2>Half-width Buttons (w3-btn) with bold style</h2>
+<p><button class="w3-btn w3-block w3-blue w3-round-xlarge"
+style="width:50%; font-weight: bold" onclick="displayDate()">
+Click me for the date</button></p>
+
+<h2>Typing inside Buttons. There are three ways to have text in buttons.</h2>
+<h4>Link resets back to this page</h4>
+<input class="w3-button w3-black" type="button" value="1.Input"
+       onclick="this.value = 'Hi!'">
+<button class="w3-button w3-black" onclick="this.innerHTML='Great!'">
+    2.Button</button>
+<a id="test" href="" class="w3-button w3-black"
+   onclick="this.innerHTML='Yay!'">3.Link</a>
+
+<h2>Putting a function in a button through the ID tag</h2>
+<button id="demo" class="w3-button w3-black" type="button" onclick="myFunction()">Try it</button>
+
+</div>
+
+<script>
+// button text changes through onclick and ID tag
+function myFunction() {
+  document.getElementById("demo").innerHTML = "Button changed";
+}
+
+// button text changes through onclick and class tag
+function displayDate() {
+  document.querySelector(".w3-btn").innerHTML = Date();
+}
+
+// button text changes through onclick and ID tag
+function displayText() {
+  document.querySelector("#test").innerHTML="Ohlala!";
+}
+</script>
+
+</body>
+</html> 

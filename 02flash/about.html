@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Shimanti's Web Page!</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            h1 {
+                color: white;
+                font-size: 28px;
+                display: flex;
+                flex-wrap: wrap;
+            }
+            
+            li {
+                font-size: 20px;
+                color:white;
+            }
+            
+            .container {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .container > div {
+                background-color: white;
+                font-size: 20px;
+                margin: 20px;
+                padding: 20px;
+                width: 200px;
+            }
+            @media (min-width: 500px) {
+                body {
+                  background-color: maroon;
+                }
+            }
+            @media (max-width: 499px) {
+                body {
+                  background-color: maroon;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Welcome to Shimanti's Webpage!</h1>
+        <ul>
+            <li><a href="#A">A: About Me</a></li>
+            <li><a href="#B">B: Programming Experience</a></li>
+            <li><a href="#C">C: Work Experience</a></li>
+            <li><a href="#D">D: Degrees</a></li>
+        </ul>
+        <div class="container">
+            <div id = "A">A. About Me: My name is Shimanti. I'm the mom of a very moody 17 year old teenage boy. I'm learning to code for fun, but also for new work experiences.</div>
+            <div id = "B">B. Programming Classes: Python, Introduction to Datascience with Python. Currently taking: Harvard CS50x, CS50 Beyond, Mobile App development.</div>
+            <div id = "C">C. Work Experience: Head of Financial Planning & Analysis, Accelerate Diagnostics; Prior companies: Kaiser Permanente, LucasArts, Apple, Walt Disney.</div>
+            <div id = "D">D. Degrees: Dual Executive MBA from Haas, UC Berkeley and from Columbia Business School, Columbia University. BA Economics and BA Psychology, UC Berkeley.</div>
+        </div>
+        <div id="flash"> 
+            <input type="button" id="FLASH" class="bigButton" value="Back to FLASH!" onclick="window.location.href='index.html';">    
+        </div>
+    </body>
+</html>

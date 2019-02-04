@@ -1,0 +1,296 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+
+<title>W3Schools Quiz v2.0</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+<style>
+* {
+  box-sizing: border-box;
+}
+@font-face {
+  font-family:'fontawesome';
+  src:url('https://www.w3schools.com/lib/fonts/fontawesome.eot?14663396');
+  src:url('https://www.w3schools.com/lib/fonts/fontawesome.eot?14663396#iefix') format('embedded-opentype'),
+      url('https://www.w3schools.com/lib/fonts/fontawesome.woff?14663396') format('woff'),
+      url('https://www.w3schools.com/lib/fonts/fontawesome.ttf?14663396') format('truetype'),
+      url('https://www.w3schools.com/lib/fonts/fontawesome.svg?14663396#fontawesome') format('svg');
+  font-weight:normal;
+  font-style:normal;
+}
+body {
+  font-family: "Segoe UI",Arial,sans-serif;
+  background-color:#fff;
+}
+#menu {
+  background-color:#555;
+  color:#f1f1f1;
+  height:60px;
+  width:100%;
+  position:absolute;
+  z-index:2;
+}
+#main {
+  width:100%;
+  padding-top:60px;
+  background-color:#fff;
+}
+#logocontainer {
+  font-family:fontawesome;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  font-size:16px;
+  letter-spacing:2px;
+  line-height:60px;
+  position:absolute;
+  right:20px;
+  top:0;
+}
+#logocontainer a {
+  text-decoration:none;
+}
+#logocontainer a:hover {
+  color:#fff;
+}
+#menuheader {
+  font-size:20px;
+  font-weight:400;
+  height:60px;
+  line-height:60px;
+  cursor:pointer;
+  padding-left:20px;
+}
+#morequizzescontainer {
+  height:0;
+  background-color:rgb(40, 44, 52);
+  color:#fff;
+  width:200px;
+  overflow:hidden;
+  text-align:center;
+  transition: height 0.3s;
+  box-shadow:0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.morequizzesitem {
+  display: block;
+  text-decoration: none;
+  padding: 10px;
+  font-size: 20px;
+  font-weight:400;
+}
+.morequizzesitem:hover {
+  background-color: #000;
+}
+#quizcontainer {
+  padding:0 20px 40px 20px;
+}
+#qtext {
+  font-size:18px;
+  margin-bottom:40px;
+}
+#altcontainer {
+  background-color:#fff;
+  font-size:120%;
+  line-height:1.7em;
+}
+#answerbuttoncontainer {
+  padding:20px 0;
+}
+.answerbutton {
+  background-color:#4CAF50;
+  padding:20px 50px;
+}
+#tryitLeaderboard {
+  height:71px;
+}
+#timespent {
+  position:absolute;
+  right:20px;
+  text-align:right;
+  border:none;
+  font-family: "Segoe UI",Arial,sans-serif;
+  font-size:16px;
+  width:80px;
+}
+/* The radiocontainer */
+.radiocontainer {
+  background-color:#f1f1f1;
+  display: block;
+  position: relative;
+  padding:10px 10px 10px 50px;
+  margin-bottom: 1px;
+  cursor: pointer;
+  font-size: 18px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  word-wrap: break-word;
+}
+
+/* Hide the browser's default radio button */
+.radiocontainer input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  height: 19px;
+  width: 19px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+.checkedlabel {
+  background-color:#ddd;
+}
+/* On mouse-over, add a grey background color */
+.radiocontainer:hover input ~ .checkmark {
+  /*nothing*/
+}
+.radiocontainer:hover {
+  background-color: #ddd;
+}
+
+/* When the radio button is checked, add a blue background */
+.radiocontainer input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.radiocontainer input:checked ~ .checkmark:after {
+  display: block;
+}
+/* Style the indicator (dot/circle) */
+.radiocontainer .checkmark:after {
+ 	top: 6px;
+	left: 6px;
+	width: 7px;
+	height: 7px;
+	border-radius: 50%;
+	background: white;
+}
+@media screen and (min-width: 728px) {
+  #tryitLeaderboard {
+    height:101px;
+  }
+  #quizcontainer {
+    padding:20px 20px 40px 20px;
+  }
+  #altcontainer  {
+    min-height:250px;
+  }
+}
+</style>
+<script>
+function clickRadio(elmnt) {
+  var n, i, x;
+  n = elmnt.id;
+  for (i = 1; i < 5; i++) {
+    x = document.getElementById("label" + i);
+    if (x) {x.className = x.className.replace(" checkedlabel", "");}
+  }
+  document.getElementById("label" + n).className += " checkedlabel";
+}
+function clickMoreQuizzes() {
+  var x = document.getElementById("morequizzescontainer");
+  if (x.style.height == "" || x.style.height == "0px") {
+    x.style.height = "450px";
+    document.getElementById("menuheader").getElementsByTagName("i")[0].className = "fas fa-caret-up";
+  } else {
+    x.style.height = "0px";
+    document.getElementById("menuheader").getElementsByTagName("i")[0].className = "fas fa-caret-down";
+  }
+}
+function clickNextButton(n) {
+  submitAnswer(n + 1);
+}
+function submitAnswer(n) {
+  var f = document.getElementById("quizform");
+  f["nextnumber"].value = n;
+  f.submit();
+}
+function startTimer() {
+  var tobj = document.getElementById("timespent")
+  var t = "0:00";
+  var s = 00;
+  var d = new Date();
+  var timeint = setInterval(function () {
+    s += 1;
+    d.setMinutes("0");
+    d.setSeconds(s);
+    min = d.getMinutes();
+    sec = d.getSeconds();
+    if (sec < 10) sec = "0" + sec;
+    document.getElementById("timespent").value = min + ":" + sec;
+  }, 1000);
+  tobj.value = t;
+}
+if (window.addEventListener) {              
+  window.addEventListener("load", startTimer);
+} else if (window.attachEvent) {                 
+  window.attachEvent("onload", startTimer);
+}
+
+</script>
+</head>
+<body>
+<div id="menu">
+  <div id="logocontainer">
+    <a href="#">logo</a>
+  </div>
+  <div id="menucontent">
+    <div id="menuheader" onclick="clickMoreQuizzes()">CSS Quiz <i class="fas fa-caret-down"></i></div>
+    <div id="morequizzescontainer">
+      <a href="#" class="morequizzesitem" style="border-bottom:1px solid #444"> Quiz Home</a>
+      <a href="#" class="morequizzesitem"> HTML Quiz</a>
+      <a href="#" class="morequizzesitem"> CSS Quiz</a>
+      <a href="#" class="morequizzesitem"> JavaScript Quiz</a>
+      <a href="#" class="morequizzesitem"> SQL Quiz</a>
+      <a href="#" class="morequizzesitem"> PHP Quiz</a>
+      <a href="#" class="morequizzesitem"> Bootstrap Quiz</a>
+      <a href="#" class="morequizzesitem"> jQuery Quiz</a>
+      <a href="#" class="morequizzesitem"> XML Quiz</a>
+    </div>
+  </div>
+</div>
+<div id="main">
+  <div id="quizcontainer">
+  
+    <h3>Question 1 of 25</h3>
+    <p id="qtext">What does CSS stand for?</p>
+    <form role="form" id="quizform" name="quizform" action='quiztest.asp?qtest=CSS' method='post'>
+      <input type="hidden" name="starttime" value="2/3/2019 6:53:42 AM">
+      <input type="hidden" name="answers" value="0000000000000000000000000">
+      <input type="hidden" name="nextnumber">
+      <input type="hidden" name="prevnumber" value="1">
+      <div style="position:relative;width:100%;">
+        <div id="altcontainer" style="overflow:auto">
+          <label class='radiocontainer' id='label1'> Colorful Style Sheets<input type='radio' name='quiz' id='1' onclick='clickRadio(this)' value='1' /><span class='checkmark'></span></label><label class='radiocontainer' id='label3'> Cascading Style Sheets<input type='radio' name='quiz' id='3' onclick='clickRadio(this)' value='3' /><span class='checkmark'></span></label><label class='radiocontainer' id='label2'> Creative Style Sheets<input type='radio' name='quiz' id='2' onclick='clickRadio(this)' value='2' /><span class='checkmark'></span></label><label class='radiocontainer' id='label4'> Computer Style Sheets<input type='radio' name='quiz' id='4' onclick='clickRadio(this)' value='4' /><span class='checkmark'></span></label>
+        </div>
+      </div>
+      <div id="answerbuttoncontainer">
+        <button class="answerbutton w3-btn" type="submit" onclick="clickNextButton(1)">Next &#10095;</button>
+        <input type="text" readonly id="timespent" value="0:00">
+      </div>
+    </form>
+  
+  </div>
+</div>
+
+</body>
+</html>
