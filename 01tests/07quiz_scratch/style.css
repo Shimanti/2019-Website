@@ -1,0 +1,35 @@
+ body {
+    font-family: "Segoe UI",Arial,sans-serif;
+    background-color: black;
+    color: white;
+}
+#quiz_container {
+    padding: 20px;
+}
+#quiz_header {
+}
+#question {
+    margin-bottom:20px;
+}
+.answers {
+}
+.option {
+    display: block;
+    position: relative;
+    padding:10px 10px 10px 40px;
+    margin-bottom: 2px;
+    cursor: pointer;
+    font-size: 18px;
+}
+.option:hover {
+    background-color: #ddd;
+}
+#nextButton {
+    margin: 20px;
+    padding:20px;
+    font-size: 18px;
+}
+#nextButton:hover {
+    background-color: black;
+    color: white;
+}

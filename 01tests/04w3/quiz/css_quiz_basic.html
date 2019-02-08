@@ -7,60 +7,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+<!..
 <link rel="stylesheet" href="style.css">
-<script>
-function clickRadio(elmnt) {
-  var n, i, x;
-  n = elmnt.id;
-  for (i = 1; i < 5; i++) {
-    x = document.getElementById("label" + i);
-    if (x) {x.className = x.className.replace(" checkedlabel", "");}
-  }
-  document.getElementById("label" + n).className += " checkedlabel";
-}
-function clickMoreQuizzes() {
-  var x = document.getElementById("morequizzescontainer");
-  if (x.style.height == "" || x.style.height == "0px") {
-    x.style.height = "450px";
-    document.getElementById("menuheader").getElementsByTagName("i")[0].className = "fas fa-caret-up";
-  } else {
-    x.style.height = "0px";
-    document.getElementById("menuheader").getElementsByTagName("i")[0].className = "fas fa-caret-down";
-  }
-}
-function clickNextButton(n) {
-  submitAnswer(n + 1);
-}
-function submitAnswer(n) {
-  var f = document.getElementById("quizform");
-  f["nextnumber"].value = n;
-  f.submit();
-}
-function startTimer() {
-  var tobj = document.getElementById("timespent")
-  var t = "0:00";
-  var s = 00;
-  var d = new Date();
-  var timeint = setInterval(function () {
-    s += 1;
-    d.setMinutes("0");
-    d.setSeconds(s);
-    min = d.getMinutes();
-    sec = d.getSeconds();
-    if (sec < 10) sec = "0" + sec;
-    document.getElementById("timespent").value = min + ":" + sec;
-  }, 1000);
-  tobj.value = t;
-}
-if (window.addEventListener) {              
-  window.addEventListener("load", startTimer);
-} else if (window.attachEvent) {                 
-  window.attachEvent("onload", startTimer);
-}
+..!>
 
-</script>
 </head>
 <body>
+
 <div id="menu">
   <div id="logocontainer">
     <a href="#">logo</a>
@@ -77,8 +30,7 @@ if (window.addEventListener) {
   </div>
 </div>
 <div id="main">
-  <div id="quizcontainer">
-  
+  <div id="quizcontainer">  
     <h3>Question 1 of 25</h3>
     <p id="qtext">What does CSS stand for?</p>
     <form role="form" id="quizform" name="quizform" action='quiztest.asp?qtest=CSS' method='post'>
@@ -95,10 +47,10 @@ if (window.addEventListener) {
         <button class="answerbutton w3-btn" type="submit" onclick="clickNextButton(1)">Next &#10095;</button>
         <input type="text" readonly id="timespent" value="0:00">
       </div>
-    </form>
-  
+    </form> 
   </div>
 </div>
+<script src="css_quiz_script.js"></script>
 
 </body>
 </html>

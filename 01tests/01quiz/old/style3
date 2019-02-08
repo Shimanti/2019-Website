@@ -1,0 +1,64 @@
+@font-face {
+  font-family:'fontawesome';
+  src:url('https://www.w3schools.com/lib/fonts/fontawesome.eot?14663396');
+  src:url('https://www.w3schools.com/lib/fonts/fontawesome.eot?14663396#iefix') format('embedded-opentype'),
+      url('https://www.w3schools.com/lib/fonts/fontawesome.woff?14663396') format('woff'),
+      url('https://www.w3schools.com/lib/fonts/fontawesome.ttf?14663396') format('truetype'),
+      url('https://www.w3schools.com/lib/fonts/fontawesome.svg?14663396#fontawesome') format('svg');
+  font-weight:normal;
+  font-style:normal;
+  
+body {
+  font-family: "Segoe UI",Arial,sans-serif;
+  background-color:#fff;
+}
+.container {
+    padding:0 20px 40px 20px;
+    background-color:#fff;
+    font-size:120%;
+    line-height:1.7em;
+}
+.title {
+    padding:0 20px 40px 20px;
+    background-color:#fff;
+    font-size:120%;
+    line-height:1.7em;
+}
+.question {
+    font-size:18px;
+    margin-bottom:40px;
+    
+}
+.option {
+  background-color:#f1f1f1;
+  display: block;
+  position: relative;
+  padding:10px 10px 10px 50px;
+  margin-bottom: 1px;
+  cursor: pointer;
+  font-size: 18px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  word-wrap: break-word;
+}
+.option:hover {
+  background-color: #ddd;
+}
+.next-btn {
+  background-color:#4CAF50;
+  padding:20px 50px;
+}
+.next-btn:hover {
+  background-color: #ddd;
+}
+.result {
+    height: 100px;
+    text-align: center;
+    font-size: 75px;
+}
+.option input:checked .option {
+    background: #08038C;
+    color: #f6f6f6;
+}
