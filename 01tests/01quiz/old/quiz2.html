@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Quiz</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+    <link href="style2.css" rel="stylesheet">
+</head>
+<body>
+    <div id="quizContainer" class="container">
+        <div class="title">Javascript Quiz</div>
+            <div id="question" class="question"></div>
+                <div style="position:relative;width:100%;">
+                    <div id="altcontainer" style="overflow:auto">
+                        <label class="radiocontainer"><input type="radio" name="option" value="1"/><span id="opt1" class='checkmark'></span></label>
+                        <label class="radiocontainer"><input type="radio" name="option" value="2"/><span id="opt2" class='checkmark'></span></label>
+                        <label class="radiocontainer"><input type="radio" name="option" value="3"/><span id="opt3" class='checkmark'></span></label>
+                        <label class="radiocontainer"><input type="radio" name="option" value="4"/><span id="opt4" class='checkmark'></span></label>
+                        <div id="answerbuttoncontainer">
+                            <button class="answerbutton w3-btn" type="submit" onclick="loadNextQuestion();">Next Question;</button>
+                        </div>
+                    </div>
+                </div>
+    </div>
+
+    <div id="result" class="container result" style="display:none;"> 
+    </div>
+    <script src="q1.js"></script>
+    <script src="quiz-script.js"></script>
+
+</body>
+</html>

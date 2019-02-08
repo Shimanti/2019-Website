@@ -1,0 +1,7 @@
+ 
+/* LIST #6 */
+#list6 { color:#eee; }
+#list6 ol { font-size:18px; }
+#list6 ol li { }
+#list6 ol li ol { list-style-image: url("http://old.marcofolio.net/css/images/nested.png"); padding:5px 0 5px 18px; font-size:15px; }
+#list6 ol li ol li { color:#bfe1f1; height:15px; margin-left:10px; }

@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+
+<title>CSS Quiz</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="menu">
+  <div id="logocontainer">
+    <a href="#">SG logo</a>
+  </div>
+  <div id="menucontent">
+    <div id="menuheader" onclick="clickMoreQuizzes()">CSS Quiz <i class="fas fa-caret-down"></i></div>
+    <div id="morequizzescontainer">
+      <a href="#" class="morequizzesitem" style="border-bottom:1px solid #444"> Quiz Home</a>
+      <a href="#" class="morequizzesitem"> HTML Quiz</a>
+      <a href="#" class="morequizzesitem"> CSS Quiz</a>
+      <a href="#" class="morequizzesitem"> JavaScript Quiz</a>
+      <a href="#" class="morequizzesitem"> Bootstrap Quiz</a>
+    </div>
+  </div>
+</div>
+<div id="main">
+  <div id="quizcontainer">  
+    <h3>CSS Quiz</h3>
+    <div id="question" class="question"></div>
+      <input type="hidden" name="starttime" value="2/3/2019 6:53:42 AM">
+      <input type="hidden" name="answers" value="0000000000000000000000000">
+      <input type="hidden" name="nextnumber">
+      <input type="hidden" name="prevnumber" value="1">
+      <div style="position:relative;width:100%;">
+        <div id="altcontainer" style="overflow:auto">
+          <label class='radiocontainer' id='label1'> Colorful Style Sheets<input type='radio'
+          name='quiz' id='1' onclick='clickRadio(this)' value='1' /><span class='checkmark'></span></label>
+          <label class='radiocontainer' id='label2'> Creative Style Sheets<input type='radio'
+          name='quiz' id='2' onclick='clickRadio(this)' value='2' /><span class='checkmark'></span></label>
+          <label class='radiocontainer' id='label3'> Cascading Style Sheets<input type='radio'
+          name='quiz' id='3' onclick='clickRadio(this)' value='3' /><span class='checkmark'></span></label>
+          <label class='radiocontainer' id='label4'> Computer Style Sheets<input type='radio'
+          name='quiz' id='4' onclick='clickRadio(this)' value='4' /><span class='checkmark'></span></label>
+        </div>
+      </div>
+      <div id="answerbuttoncontainer">
+        <button class="answerbutton w3-btn" type="submit" onclick="clickNextButton(1)">Next &#10095;</button>
+        <input type="text" readonly id="timespent" value="0:00">
+      </div>
+
+  </div>
+</div>
+<script src="css_quiz_script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Quiz - Basic HTML Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="quiz_container" class="container">
+        <h1 id="quiz_header">Javascript Quiz</h1>
+        <h2 id="question"></h2>
+        <div class="answers">
+                <label class="option"><input type="radio" name="option" value="1"/><span id="answer1"></span></label>
+                <label class="option"><input type="radio" name="option" value="2"/><span id="answer2" ></span></label>
+                <label class="option"><input type="radio" name="option" value="3"/><span id="answer3" ></span></label>
+                <label class="option"><input type="radio" name="option" value="4"/><span id="answer4" ></span></label>
+                <button id="nextButton" class="next-btn" onclick="loadNextQuestion();">Next Question</button>
+
+        </div>
+            
+    </div>
+    <script src="../01quiz/q1.js"></script>
+    <script src="../01quiz/quiz-script.js"></script>
+</body>
+</html>

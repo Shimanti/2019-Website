@@ -1,0 +1,7 @@
+ 
+/* LIST #1 */
+#list2 { }
+#list2 ul { list-style:none; text-align:center; border-top:1px solid #eee; border-bottom:1px solid #eee; padding:10px 0; }
+#list2 ul li { display:inline; text-transform:uppercase; padding:0 10px; letter-spacing:10px; }
+#list2 ul li a { text-decoration:none; color:#eee; }
+#list2 ul li a:hover { text-decoration:underline; }
