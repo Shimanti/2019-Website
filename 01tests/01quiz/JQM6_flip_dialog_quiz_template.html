@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+</head>
+<body>
+
+<div data-role="page" id="pageone" data-theme="b">
+  <div data-role="header">
+    <h1>Quiz</h1>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <p>Question 1: What does the link do?.</p>
+    <a href="#pagetwo" data-transition="flip">Answer</a>
+  </div>
+
+  <div data-role="footer">
+    <h1>&copy Shimanti Guha</h1>
+  </div>
+</div> 
+
+<div data-role="page" data-dialog="true" id="pagetwo" data-theme="b">
+  <div data-role="header">
+    <h1>Answer!</h1>
+  </div>
+
+  <div data-role="main" class="ui-content" style="background-color: #000000">
+    <p>Flips to the dialog box. <b>Note</b>: fade is default.</p>
+    <a href="#pageone">Back to the Question</a>
+    <p><b>Tip:</b> You can also close the dialog box by clicking the X button in header. This will automatically transition back to the page you came from, with the same transition effect (reversed flip) used to open this dialog.</p>
+  </div>
+
+  <div data-role="footer">
+    <h1>&copy Shimanti Guha</h1>
+  </div>
+</div> 
+
+</body>
+</html>

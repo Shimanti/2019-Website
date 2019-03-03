@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+</head>
+<body>
+
+<div data-role="page" id="pageone" data-theme="b">
+  <div data-role="header">
+    <h1 class="title">Javascript Quiz</h1>
+  </div>
+
+  <div data-role="main" class="ui-content" id="quizcontainer">
+    <p id="question" class="question" style="font-weight: bold"></p>
+    <label class="option"><input type="radio" name="option" value="1"/><span id="opt1"></span></label>
+    <label class="option"><input type="radio" name="option" value="2"/><span id="opt2"></span></label>
+    <label class="option"><input type="radio" name="option" value="3"/><span id="opt3"></span></label>
+    <label class="option"><input type="radio" name="option" value="4"/><span id="opt4"></span></label>
+    <button style = "background-color: grey"  id = "nextButton" onclick="loadNextQuestion();">Next Question</button>
+  </div>
+  
+  <div id="result" class="container result" style="display:none;"> 
+  </div>
+  
+  <script src="q1.js"></script>
+  <script src="quiz-script.js"></script>
+    
+  <div data-role="footer">
+    <h1>&copy 2019 Shimanti Guha</h1>
+  </div>
+</div> 
+
+</body>
+</html>

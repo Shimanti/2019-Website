@@ -22,7 +22,7 @@ function loadQuestion (questionIndex) {
 
 function loadNextQuestion () {
     var selectedOption = document.querySelector('input[type=radio]:checked');
-    alert("Your answer was: " + selectedOption.value + " The correct answer is: " + questions[currentQuestion].answer);
+//    alert("Your answer was: " + selectedOption.value + " The correct answer is: " + questions[currentQuestion].answer);
     if (!selectedOption) {
         alert('Please select your answer!');
         return;
@@ -39,7 +39,7 @@ function loadNextQuestion () {
     if(currentQuestion == totQuestions) {
         container.style.display = 'none';
         resultCont.style.display = '';
-        resultCont.textContent = 'Your Score: ' + score;
+        resultCont.textContent = 'Your Score: ' + score + '\n' + 'Out of: ' + totQuestions*10;
         return;
     } 
     loadQuestion(currentQuestion);

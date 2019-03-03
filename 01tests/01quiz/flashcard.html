@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+</head>
+<body>
+
+  <div data-role="page" id="pageone" data-theme="b">
+    <div data-role="header">
+      <h1>Javascript Test</h1>
+    </div>
+    
+    <div data-role="main" class="ui-content">
+      <div id="question" class="question"></div>
+      <a href="#pagetwo" data-transition="flip" class="ui-btn">Answer</a>
+    </div>
+  
+    <div data-role="footer">
+      <h1>&copy Shimanti Guha</h1>
+    </div>
+  </div> 
+
+  <div data-role="page" data-dialog="true" id="pagetwo" data-theme="b">
+    <div data-role="header">
+      <h1>Answer</h1>
+    </div>
+  
+    <div data-role="main" class="ui-content" style="background-color: #000000">
+      <div id="answer" class="answer"></div>
+    </div>
+  
+    <div data-role="footer">
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#pageone" data-transition="flip" data-icon="arrow-l">Back </a></li>
+          <li><button data-icon="arrow-r" id="nextButton" class="next-btn" onclick="loadNextQuestion();">Next </button></li>
+        </ul>
+      </div>
+      <h1>&copy Shimanti Guha</h1>
+    </div>
+  </div>
+
+
+  <script src="q2.js"></script>
+  <script src="flashcard.js"></script>
+  
+</body>
+</html>
