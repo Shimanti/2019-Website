@@ -1,0 +1,298 @@
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        
+        <title>🔦 ? WatzThis? 🔦 </title>
+        <meta charset="utf-8">
+        
+        <meta name="HandheldFriendly" content="True">
+        <meta name="Mobile Optimized" content="320"/>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes">
+       
+        <meta name="apple-mobile-web-app-capable" content="yes">   
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        
+        <!---------------home screen icons-->
+        <link rel="apple-touch-icon" sizes="120x120" href="img/h/apple-touch-icon.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="img/m/apple-touch-icon.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="img/l/apple-touch-icon.png">
+        
+        <!------splash screen:"an image that displays while your app is loading"-->
+        <link rel="apple-touch-startup-image" href="img/l/splash.png">
+        
+        <!--------hide status bar----->
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+
+        <!--------here we go.... swipey swipe time.... some javascript!-->
+        <script type="text/javascript">
+	// TOUCH-EVENTS SINGLE-FINGER SWIPE-SENSING JAVASCRIPT
+	// Courtesy of PADILICIOUS.COM and MACOSXAUTOMATION.COM
+	
+	// this script can be used with one or more page elements to perform actions based on them being swiped with a single finger
+
+	var triggerElementID = null; // this variable is used to identity the triggering element
+	var fingerCount = 0;
+	var startX = 0;
+	var startY = 0;
+	var curX = 0;
+	var curY = 0;
+	var deltaX = 0;
+	var deltaY = 0;
+	var horzDiff = 0;
+	var vertDiff = 0;
+	var minLength = 72; // the shortest distance the user may swipe
+	var swipeLength = 0;
+	var swipeAngle = null;
+	var swipeDirection = null;
+	
+	// The 4 Touch Event Handlers
+	
+	// NOTE: the touchStart handler should also receive the ID of the triggering element
+	// make sure its ID is passed in the event call placed in the element declaration, like:
+	// <div id="picture-frame" ontouchstart="touchStart(event,'picture-frame');"  ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchcancel="touchCancel(event);">
+
+	function touchStart(event,passedName) {
+		// disable the standard ability to select the touched object
+		event.preventDefault();
+		// get the total number of fingers touching the screen
+		fingerCount = event.touches.length;
+		// since we're looking for a swipe (single finger) and not a gesture (multiple fingers),
+		// check that only one finger was used
+		if ( fingerCount == 1 ) {
+			// get the coordinates of the touch
+			startX = event.touches[0].pageX;
+			startY = event.touches[0].pageY;
+			// store the triggering element ID
+			triggerElementID = passedName;
+		} else {
+			// more than one finger touched so cancel
+			touchCancel(event);
+		}
+	}
+
+	function touchMove(event) {
+		event.preventDefault();
+		if ( event.touches.length == 1 ) {
+			curX = event.touches[0].pageX;
+			curY = event.touches[0].pageY;
+		} else {
+			touchCancel(event);
+		}
+	}
+	
+	function touchEnd(event) {
+		event.preventDefault();
+		// check to see if more than one finger was used and that there is an ending coordinate
+		if ( fingerCount == 1 && curX != 0 ) {
+			// use the Distance Formula to determine the length of the swipe
+			swipeLength = Math.round(Math.sqrt(Math.pow(curX - startX,2) + Math.pow(curY - startY,2)));
+			// if the user swiped more than the minimum length, perform the appropriate action
+			if ( swipeLength >= minLength ) {
+				caluculateAngle();
+				determineSwipeDirection();
+				processingRoutine();
+				touchCancel(event); // reset the variables
+			} else {
+				touchCancel(event);
+			}	
+		} else {
+			touchCancel(event);
+		}
+	}
+
+	function touchCancel(event) {
+		// reset the variables back to default values
+		fingerCount = 0;
+		startX = 0;
+		startY = 0;
+		curX = 0;
+		curY = 0;
+		deltaX = 0;
+		deltaY = 0;
+		horzDiff = 0;
+		vertDiff = 0;
+		swipeLength = 0;
+		swipeAngle = null;
+		swipeDirection = null;
+		triggerElementID = null;
+	}
+	
+	function caluculateAngle() {
+		var X = startX-curX;
+		var Y = curY-startY;
+		var Z = Math.round(Math.sqrt(Math.pow(X,2)+Math.pow(Y,2))); //the distance - rounded - in pixels
+		var r = Math.atan2(Y,X); //angle in radians (Cartesian system)
+		swipeAngle = Math.round(r*180/Math.PI); //angle in degrees
+		if ( swipeAngle < 0 ) { swipeAngle =  360 - Math.abs(swipeAngle); }
+	}
+	
+	function determineSwipeDirection() {
+		if ( (swipeAngle <= 45) && (swipeAngle >= 0) ) {
+			swipeDirection = 'left';
+		} else if ( (swipeAngle <= 360) && (swipeAngle >= 315) ) {
+			swipeDirection = 'left';
+		} else if ( (swipeAngle >= 135) && (swipeAngle <= 225) ) {
+			swipeDirection = 'right';
+		} else if ( (swipeAngle > 45) && (swipeAngle < 135) ) {
+			swipeDirection = 'down';
+		} else {
+			swipeDirection = 'up';
+		}
+	}
+	
+	function processingRoutine() {
+		var swipedElement = document.getElementById(triggerElementID);
+		if ( swipeDirection == 'left' ) {
+			window.frames.ghost.location.href = 'ghost_reverse.svg'
+			
+		} else if ( swipeDirection == 'right' ) {
+			window.frames.ghost.location.href = 'ghost.svg';
+     
+		}
+	}
+
+</script>
+
+    <script> <!-----------this is Javascript right here!!!---->
+    
+    function getLoc(){      <!---------//here's how we'll get location-->
+
+var gps = navigator.geolocation.getCurrentPosition(
+function(position){
+  var latitude = position.coords.latitude;
+  var longitude = position.coords.longitude;
+  alert("Your Latitude is: " + latitude + " and your longitude is: " + longitude + "! Have fun!");
+}
+);
+}
+        var light = new Array();
+        var t; 
+        var color=0; 
+        var flipping=0; 
+        var speed;  
+        light[0] = 'BLACK';
+        light[1] = 'WHITE';
+        light[2] = 'RED';
+        light[3] = 'ORANGE';
+        light[4] = 'YELLOW';
+        light[5] = 'GREEN';
+        light[6] = 'BLUE';
+        light[7] = 'PURPLE';
+        function flip(whichway){
+            document.body.style.backgroundColor = light[whichway];
+            document.getElementById("pageColor").innerHTML = light[whichway];
+            stipFlip();
+        }
+        function autoFlip() { 
+   document.body.style.backgroundColor = light[color];
+   document.getElementById("pageColor").innerHTML = light[color];
+   // <!-------------------------------------------------------- old code: flip lights in order
+   // if (color < light.length-1) {         
+     //color++;     
+   //} else {         
+     //color=0;     
+   //}
+  
+  // <!----------------------------------------------------------new code: flip lights in reverse 
+   if (color > 0) {         
+      color-=2;         // changed color --; to color-=2; in order to skip every other color  
+    } else {         
+      color=light.length-1;     
+    }
+t = setTimeout("autoFlip()",speed); 
+} 
+function doAutoFlip(changespeed){     
+ if (!flipping){         
+   flipping=1;   
+   speed=changespeed;      
+   autoFlip();     
+ }    
+} 
+function stopFlip() {     
+ clearTimeout(t);     
+ flipping=0; 
+}
+
+
+    </script>
+    
+    <style>
+    body {
+      font-family:arial, helvetica;
+      text-align: center;
+        }
+        #container {}
+        #directions, #flashlight, #danceparty {
+      margin:4px;
+        }
+         ol {
+          display: inline-block;
+          margin: 0 auto;
+      text-align:left;
+         }
+     .bigButton {
+        font-size:18px;
+        }
+       
+</style>
+    
+    </head>
+    <body>
+       <h1>🔦 WatzThis? 🔦</h1>
+       <nav id="topnav">
+      Home | Using WatzThis | Contact Us
+      </nav>
+       
+       
+       
+     <br>
+     <!--this was the old one, we replace it now
+     <object width="100%" height="100px" data="ghost.svg" type="image/svg+xml"></object>-->
+     <iframe name="ghost" width="100%" height="100px" src="ghost.svg"></iframe>
+        <div id="directions" ontouchstart="touchStart(event,'ghost');" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchcancel="touchCancel(event);">
+        <ol>
+         <p><strong>Swipe here to reverse the ghost's direction!</strong></p>
+         
+          <li>Use the top row of buttons to turn the flashlight on or off.</li>
+          <li>Use the 2nd row of buttons to make the light different colors.</li>
+          <li>Use the 3rd row of buttons to turn on and off your automatic flashing color light dance party!</li>
+        </ol>
+        </div> 
+        
+        
+    <div id="container"> 
+
+    <div id="flashlight">
+    <input type="button" id="OFF" value="OFF" onclick="flip(0);">
+    <input type="button" id="ON" value="ON" onclick="flip(1);">
+    </div>
+    
+    <div id="rainbowflashlight"></div>
+    <input type="button" id="RED" value="RED" onclick="flip(2);">
+    <input type="button" id="ORANGE" value="ORANGE" onclick="flip(3);">
+    <input type="button" id="YELLOW" value="YELLOW" onclick="flip(4);">
+    <input type="button" id="GREEN" value="GREEN" onclick="flip(5);">
+    <input type="button" id="BLUE" value="BLUE" onclick="flip(6);">
+    <input type="button" id="PURPLE" value="PURPLE" onclick="flip(7);">
+    </div>
+    
+    <div id="danceparty"> 
+    <input type="button" id="AUTO" class="bigButton" value="AUTO" onclick="doAutoFlip(250);"> 
+    <input type="button" id="STOP" class="bigButton" value="STOP" onclick="stopFlip();"> 
+    </div>
+    
+    <div id="geolocation"> 
+<input type="button" id="latlong" class="bigButton" value="GET LOC" onclick="getLoc();"> 
+</div>
+    
+    <br>
+    Color = <div id="pageColor"></div> 
+    
+    </body>
+</html>

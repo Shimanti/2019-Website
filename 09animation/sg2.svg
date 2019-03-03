@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<svg width="640" height="480" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+ <!-- Created with SVG-edit - https://github.com/SVG-Edit/svgedit-->
+ <svg x="-200" y="-50">
+ <g class="layer">
+  <title>Layer 1</title>
+  <polygon cx="192.5" cy="325.5" edge="0" fill="none" id="svg_6" orient="x" shape="regularPoly" sides="5" strokeWidth="5" strokecolor="#000000"/>
+  <polygon cx="204.5" cy="273.5" edge="0" fill="none" id="svg_8" orient="x" points="204.5,273.5 204.5,273.5 204.5,273.5 204.5,273.5 204.5,273.5 204.5,273.5 " shape="regularPoly" sides="5" stroke-width="5" strokeWidth="5" strokecolor="none"/>
+  <polygon cx="410.5" cy="125.5" edge="0" fill="none" id="svg_9" orient="x" shape="regularPoly" sides="5" strokeWidth="5" strokecolor="none"/>
+  <g id="svg_24">
+   <polygon cx="198.5" cy="131.5" fill="#5f00bf" id="svg_11" orient="point" point="5" points="237.5,103.9437255859375 259.73150634765625,167.90093994140625 327.4283752441406,169.28048706054688 273.4713439941406,210.18780517578125 293.07879638671875,274.99761962890625 237.5,236.322509765625 181.92120361328125,274.99761962890625 201.52865600585938,210.18780517578125 147.57162475585938,169.28048706054688 215.26849365234375,167.90093994140625 237.5,103.9437255859375 259.73150634765625,167.90093994140625 " r="94.556274" r2="37.822509" shape="star" stroke="#000000" stroke-width="5" strokeWidth="5" strokecolor="#000000"/>
+   <text fill="#ffffff" font-family="serif" font-size="24" id="svg_22" stroke="#000000" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="0" text-anchor="middle" transform="matrix(2.48329 0 0 1.53441 -373.18 -41.3513)" x="245.77114" xml:space="preserve" y="158.825618">Sg</text>
+  </g>
+  </g>
+  <animate attributeName="x" to="250" dur="3s" repeatCount="10" />
+ </svg>
+</svg>
