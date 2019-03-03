@@ -1,2 +1,2 @@
-# Shimanti websites
-Websites created during 2019 classes for viewing online
+# Shimanti website
+Files created during 2019 classes for viewing online
